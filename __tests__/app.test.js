@@ -34,7 +34,7 @@ describe('gitty routes', () => {
       email: 'not-real@example.com',
       avatar: expect.any(String),
       iat: expect.any(Number),
-      exp: expect.any(Number),
+      exp: expect.any(Number)
     });
   });
 });
