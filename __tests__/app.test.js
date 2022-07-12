@@ -37,4 +37,10 @@ describe('gitty routes', () => {
       exp: expect.any(Number)
     });
   });
+
+  it('should delete cookie', async () => {
+    const res = await request
+      .agent(app)
+      .delete
+  });
 });
