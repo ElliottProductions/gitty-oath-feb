@@ -45,4 +45,19 @@ describe('gitty routes', () => {
     
     expect(res.status).toBe(200);
   });
+
+  it('should make a post for logged in user', async () => {
+    const agent = request.agent(app);
+
+    await agent
+      .get('/api/v1/github/callback?code=42')
+      .redirects(1);
+
+    const res = await agent
+      .post('/api/v1/github')
+      .send({ detail: 'sample post' });
+    
+    expect(res.status).toBe(200);
+    expect(res.body.detail).toEqual('sample post');
+  }); 
 });
