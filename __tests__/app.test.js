@@ -41,6 +41,8 @@ describe('gitty routes', () => {
   it('should delete cookie', async () => {
     const res = await request
       .agent(app)
-      .delete
+      .delete('/api/v1/github/sessions');
+    
+    expect(res.status).toBe(200);
   });
 });
